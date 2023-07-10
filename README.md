@@ -20,6 +20,8 @@ git submodule add https://github.com/Homqyy/egoogletest.git
 add_subdirectory(egoogletest)
 
 target_include_directories(test_all PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/egoogletest)
+
+target_link_libraries(test_all PRIVATE GTest::gtest_main egtest your_project_target)
 ```
 
 3. In your test files, you can use the `egtest.h` header file to use the features provided by this library:
